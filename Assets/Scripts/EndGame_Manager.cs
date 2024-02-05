@@ -49,10 +49,12 @@ public class EndGame_Manager : MonoBehaviour
         {
             Win_Game();
         }
-        else if (gameOver == true)
+
+       /* else if (gameOver == true)
         {
             Ad_Lose_Game();
-        }
+        }*/
+
         else if (gameOver == true)
         {
             Lose_Game();
@@ -64,11 +66,11 @@ public class EndGame_Manager : MonoBehaviour
         Debug.Log("sd");
     }
     
-    public void Ad_Lose_Game()
+   /* public void Ad_Lose_Game()
     {
         Debug.Log("sd");
 
-    }
+    }*/
 
     public void Lose_Game()
     {

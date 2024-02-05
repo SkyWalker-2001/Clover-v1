@@ -10,8 +10,6 @@ public class Enemy_State : MonoBehaviour
         {
             Player_State player_State = collision.GetComponent<Player_State>();
             player_State.Player_TakeDamage(1f);
-            Debug.Log("afuke2");
-
             Destroy(gameObject);
         }
     }
