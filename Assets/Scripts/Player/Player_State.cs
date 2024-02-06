@@ -16,7 +16,7 @@ public class Player_State : MonoBehaviour
     {
         health = maxHealth;
        // fill_Image.fillAmount = health / maxHealth;
-        EndGame_Manager.endGame_Manager.gameOver = false;
+       // EndGame_Manager.endGame_Manager.gameOver = false;
 
         StartCoroutine(Damage_Protection());
     }
@@ -24,6 +24,7 @@ public class Player_State : MonoBehaviour
     private void Start()
     {
         EndGame_Manager.endGame_Manager.RegisterPlayerState(this);
+        EndGame_Manager.endGame_Manager.gameOver = false;
 
     }
 
@@ -48,8 +49,8 @@ public class Player_State : MonoBehaviour
             EndGame_Manager.endGame_Manager.gameOver = true;
             EndGame_Manager.endGame_Manager.StartResolveSequence();
             //Instantiate(Explosion_Prefab, transform.position, transform.rotation);
-            Destroy(gameObject);
-            //gameObject.SetActive(false);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
