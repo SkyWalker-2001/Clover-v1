@@ -13,6 +13,7 @@ public class Button_Controller : MonoBehaviour
     }
     public void LoadLevelByString(string level_String)
     {
+        Debug.Log(level_String);
         SceneManager.LoadScene(level_String);
     }
 }
