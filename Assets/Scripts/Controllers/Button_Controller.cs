@@ -8,12 +8,10 @@ public class Button_Controller : MonoBehaviour
 {
     public void ResetLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1;
+        Fade_canvas.fader.FaderLoader_Int(SceneManager.GetActiveScene().buildIndex);
     }
     public void LoadLevelByString(string level_String)
     {
-        Debug.Log(level_String);
-        SceneManager.LoadScene(level_String);
+        Fade_canvas.fader.FaderLoader_String(level_String);
     }
 }
