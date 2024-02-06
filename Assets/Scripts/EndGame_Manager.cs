@@ -7,6 +7,8 @@ public class EndGame_Manager : MonoBehaviour
     public static EndGame_Manager endGame_Manager;
 
     private Player_State player;
+    private Panel_Controller panel_Controller;
+
 
 
     public bool gameOver;
@@ -47,7 +49,7 @@ public class EndGame_Manager : MonoBehaviour
     {
         if (gameOver == false)
         {
-            Win_Game();
+            Debug.Log("WIN");
         }
 
        /* else if (gameOver == true)
@@ -61,10 +63,10 @@ public class EndGame_Manager : MonoBehaviour
         }
     }
 
-    public void Win_Game()
+    /* public void Win_Game()
     {
         Debug.Log("sd");
-    }
+    }*/
     
    /* public void Ad_Lose_Game()
     {
@@ -74,13 +76,20 @@ public class EndGame_Manager : MonoBehaviour
 
     public void Lose_Game()
     {
-        Debug.Log("sd");
+        panel_Controller.Activate_GameOver_Screen();
 
+        Time.timeScale = 0;
     }
 
 
     public void RegisterPlayerState(Player_State player_State)
     {
         player = player_State;
+    }
+
+
+    public void RegisterPanelController(Panel_Controller pC)
+    {
+        panel_Controller = pC;
     }
 }

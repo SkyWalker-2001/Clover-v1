@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.UI;
 
 public class Player_State : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
+    [SerializeField] private Image fill_Image;
 
     private float health;
 
@@ -15,7 +17,7 @@ public class Player_State : MonoBehaviour
     void OnEnable()
     {
         health = maxHealth;
-       // fill_Image.fillAmount = health / maxHealth;
+        fill_Image.fillAmount = health / maxHealth;
        // EndGame_Manager.endGame_Manager.gameOver = false;
 
         StartCoroutine(Damage_Protection());
@@ -41,7 +43,7 @@ public class Player_State : MonoBehaviour
 
     
 
-        //fill_Image.fillAmount = health / maxHealth;
+        fill_Image.fillAmount = health / maxHealth;
 
         if (health <= 0)
         {
