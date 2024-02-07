@@ -31,7 +31,7 @@ public class EndGame_Manager : MonoBehaviour
 
     private void Start()
     {
-
+        Application.targetFrameRate = 144;
     }
 
     public void StartResolveSequence()
@@ -70,7 +70,6 @@ public class EndGame_Manager : MonoBehaviour
     public void UpdateScore(int addScore)
     {
         Score += addScore;
-        Debug.Log($"{Score} score");
         scoreTextMeshPro.text = "Score: " + Score.ToString();
     }
 

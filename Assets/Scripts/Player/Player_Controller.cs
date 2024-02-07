@@ -85,8 +85,8 @@ public class Player_Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
 
-        maxLeft = mainCam.ViewportToWorldPoint(new Vector2(0.15f, 0)).x;
-        maxRight = mainCam.ViewportToWorldPoint(new Vector2(0.85f, 0)).x;
+        maxLeft = mainCam.ViewportToWorldPoint(new Vector2(0.1f, 0)).x;
+        maxRight = mainCam.ViewportToWorldPoint(new Vector2(0.98f, 0)).x;
 
         maxDown = mainCam.ViewportToWorldPoint(new Vector2(0, 0.07f)).y;
         maxUp = mainCam.ViewportToWorldPoint(new Vector2(0, 0.9f)).y;

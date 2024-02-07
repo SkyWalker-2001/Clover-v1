@@ -6,7 +6,7 @@ public class EnemySpawn_Horizontal : MonoBehaviour
 {
     public Camera MainCamera;
 
-    public GameObject asteroidPrefab;
+    public GameObject[] asteroidPrefab;
 
     public float respawnTime;
 
@@ -20,7 +20,7 @@ public class EnemySpawn_Horizontal : MonoBehaviour
     }
     private void SpawnEnemy()
     {
-        GameObject asteroid = Instantiate(asteroidPrefab) as GameObject;
+        GameObject asteroid = Instantiate(asteroidPrefab[Random.RandomRange(0, asteroidPrefab.Length)]) as GameObject;
 
         asteroid.transform.position = new Vector2(screenBounds.x , Random.Range(-screenBounds.y, screenBounds.y));
 
