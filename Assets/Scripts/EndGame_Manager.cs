@@ -11,10 +11,12 @@ public class EndGame_Manager : MonoBehaviour
     private Player_State player;
     private Panel_Controller panel_Controller;
     private TextMeshProUGUI scoreTextMeshPro;
+    private TextMeshProUGUI coinTextMeshPro;
 
     public bool gameOver;
 
     public int Score;
+    public int Coin;
 
     private void Awake()
     {
@@ -71,7 +73,14 @@ public class EndGame_Manager : MonoBehaviour
     {
         Score += addScore;
         scoreTextMeshPro.text = "Score: " + Score.ToString();
+    }   
+    
+    public void UpdateCoin(int addCoin)
+    {
+        Coin += addCoin;
+        coinTextMeshPro.text = "Coin: " + Coin.ToString();
     }
+
 
     public void Set_Score()
     {
@@ -90,7 +99,6 @@ public class EndGame_Manager : MonoBehaviour
         player = player_State;
     }
 
-
     public void RegisterPanelController(Panel_Controller pC)
     {
         panel_Controller = pC;
@@ -100,4 +108,11 @@ public class EndGame_Manager : MonoBehaviour
     {
         scoreTextMeshPro = score_TMP;
     }
+
+    public void Register_Coin_Text(TextMeshProUGUI coin_TMP)
+    {
+        coinTextMeshPro = coin_TMP;
+    }
+
+
 }

@@ -14,6 +14,7 @@ public class Player_State : MonoBehaviour
     private int coin_Prefab;
     private int coin_Amount;
 
+
     public bool canTakeDamage = true;
 
     void OnEnable()
@@ -29,7 +30,6 @@ public class Player_State : MonoBehaviour
     {
         EndGame_Manager.endGame_Manager.RegisterPlayerState(this);
         EndGame_Manager.endGame_Manager.gameOver = false;
-        coin_Amount = 0;
     }
 
     public void Player_TakeDamage(float damage)
@@ -69,11 +69,10 @@ public class Player_State : MonoBehaviour
 
     public void Add_Collectable_Coin(int coin_am)
     {
-        Debug.Log(coin_Amount);
-
-        coin_Amount += coin_am;
-        Debug.Log(coin_Amount);
+        EndGame_Manager.endGame_Manager.UpdateCoin(coin_am);
     }
+
+
     IEnumerator Damage_Protection()
     {
         canTakeDamage = false;
