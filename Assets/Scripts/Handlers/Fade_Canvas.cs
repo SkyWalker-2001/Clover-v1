@@ -62,14 +62,23 @@ public class Fade_canvas : MonoBehaviour
         //if (_canvasGroup.alpha != 0)
         //    yield break;
 
-        if(fadeStarted)
+        Debug.Log(level_Name);
+        
+        if (fadeStarted)
             yield break;
+
         fadeStarted = true;
-        while(_canvasGroup.alpha < 1)
+
+        while (_canvasGroup.alpha < 1)
         {
+            Debug.Log(_canvasGroup.alpha);
             _canvasGroup.alpha += changeValue;
-            yield return new WaitForSeconds(wait_Time);
+            Debug.Log(_canvasGroup.alpha);
+            yield return new WaitForEndOfFrame();
+            Debug.Log(wait_Time);
+            Debug.Log("end");
         }
+
         //SceneManager.LoadScene(level_Name);
 
         // --------------------------------------------------------------IMP------------------------------------------ //
@@ -87,20 +96,20 @@ public class Fade_canvas : MonoBehaviour
         {
             loading_Bar.fillAmount = ao.progress / 0.9f;
 
-            if(ao.progress == 0.9f)
+            if (ao.progress == 0.9f)
             {
                 ao.allowSceneActivation = true;
             }
             yield return null;
         }
 
-
         // ---------------------------------------------------------------------------------------------------------- //
 
         // yield return new WaitForSeconds(.1f);
         StartCoroutine(FadeIn());
-    }  
-    
+
+    }
+
     private IEnumerator FadeOut_Int(int level_Index)
     {
         if(fadeStarted)
