@@ -47,12 +47,13 @@ public class Fade_canvas : MonoBehaviour
         loading_Screen.SetActive(false);
 
         fadeStarted = false;
-        while(_canvasGroup.alpha > 0)
+        while(_canvasGroup.alpha > 0.0)
         {
+            Debug.Log(_canvasGroup.alpha);
             if(fadeStarted)
                 yield break;
             _canvasGroup.alpha -= changeValue;
-            yield return new WaitForSeconds(wait_Time); 
+            yield return new WaitForEndOfFrame(); 
         }
     }
 
@@ -61,8 +62,6 @@ public class Fade_canvas : MonoBehaviour
         // Until fade in disappear player controles is on hold 
         //if (_canvasGroup.alpha != 0)
         //    yield break;
-
-        Debug.Log(level_Name);
         
         if (fadeStarted)
             yield break;
@@ -71,12 +70,8 @@ public class Fade_canvas : MonoBehaviour
 
         while (_canvasGroup.alpha < 1)
         {
-            Debug.Log(_canvasGroup.alpha);
             _canvasGroup.alpha += changeValue;
-            Debug.Log(_canvasGroup.alpha);
             yield return new WaitForEndOfFrame();
-            Debug.Log(wait_Time);
-            Debug.Log("end");
         }
 
         //SceneManager.LoadScene(level_Name);
@@ -95,7 +90,6 @@ public class Fade_canvas : MonoBehaviour
         while (ao.isDone == false)
         {
             loading_Bar.fillAmount = ao.progress / 0.9f;
-
             if (ao.progress == 0.9f)
             {
                 ao.allowSceneActivation = true;

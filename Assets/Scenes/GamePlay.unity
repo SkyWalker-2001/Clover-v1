@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495b917e1ff5a0349a8252ed18e8fa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxHealth: 3
   fill_Image: {fileID: 787478177}
   canTakeDamage: 1
 --- !u!1 &315790177
@@ -1088,10 +1088,6 @@ PrefabInstance:
     - target: {fileID: 8250402492223519944, guid: 91f24dbd7e5b7df4faf5a8e0c1ea763b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8263965402080224987, guid: 91f24dbd7e5b7df4faf5a8e0c1ea763b, type: 3}
-      propertyPath: m_Alpha
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
