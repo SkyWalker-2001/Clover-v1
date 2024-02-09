@@ -62,7 +62,7 @@ public class EndGame_Manager : MonoBehaviour
 
     public void Lose_Game()
     {
-        Set_Score();
+        Set_Score_Coin();
 
         panel_Controller.Activate_GameOver_Screen();
 
@@ -82,7 +82,7 @@ public class EndGame_Manager : MonoBehaviour
     }
 
 
-    public void Set_Score()
+    public void Set_Score_Coin()
     {
         PlayerPrefs.SetInt("Score" + SceneManager.GetActiveScene().name, Score);
         int highScore = PlayerPrefs.GetInt("High_Score" + SceneManager.GetActiveScene().name, 0);
@@ -92,6 +92,10 @@ public class EndGame_Manager : MonoBehaviour
             PlayerPrefs.SetInt("High_Score" + SceneManager.GetActiveScene().name, Score);
         }
         Score = 0;
+
+        PlayerPrefs.SetInt("Coin" + SceneManager.GetActiveScene().name, Coin);
+
+        Coin = 0;
     }
 
     public void RegisterPlayerState(Player_State player_State)

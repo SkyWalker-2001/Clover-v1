@@ -16,8 +16,11 @@ public class Button_Controller : MonoBehaviour
     public void LoadLevelByString(string level_String)
     {
         Fade_canvas.fader.FaderLoader_String(level_String);
-    } 
-    
+
+        Time.timeScale = 1;
+
+    }
+
     public void LoadLevelByInt(int level_Int)
     {
         Fade_canvas.fader.FaderLoader_Int (level_Int);

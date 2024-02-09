@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 495b917e1ff5a0349a8252ed18e8fa55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 1
   fill_Image: {fileID: 787478177}
   canTakeDamage: 1
 --- !u!1 &315790177

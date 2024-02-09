@@ -49,7 +49,6 @@ public class Fade_canvas : MonoBehaviour
         fadeStarted = false;
         while(_canvasGroup.alpha > 0.0)
         {
-            Debug.Log(_canvasGroup.alpha);
             if(fadeStarted)
                 yield break;
             _canvasGroup.alpha -= changeValue;
