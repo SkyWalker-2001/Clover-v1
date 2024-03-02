@@ -23,10 +23,7 @@ public class Info_List_Display: MonoBehaviour
         score_Prefab = PlayerPrefs.GetInt("ScoreGamePlay", 0);
         score_TMP.text = "Score: " + score_Prefab.ToString();
         
-        coin_Prefab = PlayerPrefs.GetInt("CoinGamePlay", 0);
+        coin_Prefab = PlayerPrefs.GetInt("TotalCoinGamePlay", 0);
         coin_TMP.text = "Coin: " + coin_Prefab.ToString();
-
-
-
     }
 }

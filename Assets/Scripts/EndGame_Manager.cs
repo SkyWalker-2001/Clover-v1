@@ -91,9 +91,16 @@ public class EndGame_Manager : MonoBehaviour
         {
             PlayerPrefs.SetInt("High_Score" + SceneManager.GetActiveScene().name, Score);
         }
+
         Score = 0;
 
-        PlayerPrefs.SetInt("Coin" + SceneManager.GetActiveScene().name, Coin);
+        int oneRun_Coin = PlayerPrefs.GetInt("TotalCoin" + SceneManager.GetActiveScene().name, 0);
+
+        int total = oneRun_Coin + Coin;
+
+        PlayerPrefs.SetInt("TotalCoin" + SceneManager.GetActiveScene().name, total);
+
+        Debug.Log(PlayerPrefs.GetInt("TotalCoin" + SceneManager.GetActiveScene().name, 0));
 
         Coin = 0;
     }

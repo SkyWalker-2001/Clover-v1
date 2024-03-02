@@ -8,7 +8,6 @@ public class Button_Controller : MonoBehaviour
 {
     public void ResetLevel()
     {
-        Debug.Log(SceneManager.GetActiveScene().buildIndex);
         Fade_canvas.fader.FaderLoader_Int(SceneManager.GetActiveScene().buildIndex);
 
         Time.timeScale = 1;
